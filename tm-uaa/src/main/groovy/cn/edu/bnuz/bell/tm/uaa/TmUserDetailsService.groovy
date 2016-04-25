@@ -16,6 +16,9 @@ import org.springframework.security.core.userdetails.UserDetailsService
 class TmUserDetailsService implements UserDetailsService {
     protected Logger log = LoggerFactory.getLogger(getClass())
 
+    @Autowired
+    PluginSecurityConfigurerService pluginSecurityConfigurerService
+
     @Override
     public UserDetails loadUserByUsername(String username) {
         User.withNewSession {
